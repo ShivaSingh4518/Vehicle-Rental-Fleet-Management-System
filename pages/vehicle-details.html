@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vehicle Details | VRAFM Fleet</title>
+  
+  <!-- CSS Architecture Imports -->
+  <link rel="stylesheet" href="../css/tokens/variables.css">
+  <link rel="stylesheet" href="../css/base/reset.css">
+  <link rel="stylesheet" href="../css/base/layout.css">
+  <link rel="stylesheet" href="../css/components/navbar.css">
+  <link rel="stylesheet" href="../css/components/buttons.css">
+  <link rel="stylesheet" href="../css/components/badges.css">
+  <link rel="stylesheet" href="../css/components/cards.css">
+  <link rel="stylesheet" href="../css/pages/vehicle-details.css">
+  
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <header class="navbar">
+    <div class="nav-container">
+      <a href="../index.html" class="logo">
+        <img src="../assets/images/logo/logo.svg" alt="VRAFM Logo">
+      </a>
+      <nav class="nav-menu">
+        <a href="../index.html">Home</a>
+        <a href="vehicles.html">Vehicles</a>
+        <a href="booking.html">My Booking</a>
+        <a href="admin.html">Admin</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Content Area -->
+  <main class="container page-content">
+    
+    <!-- Back Button -->
+    <a href="vehicles.html" class="btn btn-secondary btn-sm">&larr; Back to Vehicles</a>
+
+    <section class="vehicle-details-grid">
+      
+      <!-- Gallery Column -->
+      <div class="vehicle-gallery">
+        <div class="main-image-container">
+          <img src="../assets/images/cars/sedan-main.jpg" alt="Luxury Sedan" class="main-image">
+        </div>
+        <div class="thumbnail-grid">
+          <img src="../assets/images/cars/sedan-front.jpg" alt="Front View" class="thumbnail active">
+          <img src="../assets/images/cars/sedan-side.jpg" alt="Side View" class="thumbnail">
+          <img src="../assets/images/cars/sedan-interior.jpg" alt="Interior View" class="thumbnail">
+        </div>
+      </div>
+
+      <!-- Vehicle Overview & Specs Column -->
+      <div class="vehicle-info">
+        <div class="header-group">
+          <span class="badge badge-category">Sedan</span>
+          <span class="badge badge-status-available">Available</span>
+          <h1 class="vehicle-title">2024 Executive Luxury Sedan</h1>
+          <p class="vehicle-subtitle">Premium comfort and exceptional performance for long trips and executive travel.</p>
+        </div>
+
+        <!-- Specifications Grid -->
+        <div class="specs-grid">
+          <div class="spec-card">
+            <span class="spec-label">Transmission</span>
+            <span class="spec-value">Automatic</span>
+          </div>
+          <div class="spec-card">
+            <span class="spec-label">Fuel Type</span>
+            <span class="spec-value">Hybrid / Petrol</span>
+          </div>
+          <div class="spec-card">
+            <span class="spec-label">Seats</span>
+            <span class="spec-value">5 Adults</span>
+          </div>
+          <div class="spec-card">
+            <span class="spec-label">Luggage</span>
+            <span class="spec-value">2 Large Bags</span>
+          </div>
+        </div>
+
+        <!-- Features Checklist -->
+        <div class="features-section">
+          <h3>Included Features</h3>
+          <ul class="features-list">
+            <li>✓ GPS Navigation System</li>
+            <li>✓ Bluetooth & Apple CarPlay</li>
+            <li>✓ Climate Control AC</li>
+            <li>✓ Comprehensive Insurance Cover</li>
+            <li>✓ 24/7 Roadside Assistance</li>
+          </ul>
+        </div>
+
+        <!-- Pricing & Call-to-Action Card -->
+        <div class="booking-cta-card">
+          <div class="price-box">
+            <span class="currency">$</span>
+            <span class="price">75</span>
+            <span class="unit">/ day</span>
+          </div>
+          <!-- Link pointing to booking.html (Dev 2 Next Step) -->
+          <a href="booking.html" class="btn btn-primary btn-block">Proceed to Booking</a>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+</body>
+</html>
