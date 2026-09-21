@@ -152,8 +152,8 @@ The project is divided among four team members. Each member is responsible for s
 |---|---|---|---|---|
 | **Shiva Singh** | Dev 1 | 🏠 Home & Vehicle Listing | Homepage, navigation, vehicle listing, vehicle cards, responsive layout | `feature/Shiva` |
 | **Saurabh Tomar** | Dev 2 | 🚗 Vehicle Details & Booking | Vehicle details, booking form, confirmation page, form styling | `feature/Saurabh` |
-| **Shivam** | Dev 3 | 🛠️ Admin & Customer Management | Admin dashboard, customer management, tables, status badges | `feature/Shivam` |
-| **Shivansh** | Dev 4 | 🔧 Maintenance & Fleet Status | Maintenance page, fleet status, reusable cards, responsive testing | `feature/Shivansh` |
+| **Shivam Rawat** | Dev 3 | 🛠️ Admin & Customer Management | Admin dashboard, customer management, tables, status badges | `feature/Shivam` |
+| **Shivansh Pandey** | Dev 4 | 🔧 Maintenance & Fleet Status | Maintenance page, fleet status, reusable cards, responsive testing | `feature/Shivansh` |
 
 ---
 
