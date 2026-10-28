@@ -183,3 +183,63 @@ body {
     font-size: 0.9rem;
   }
 }
+
+/* Improved vehicle card */
+.section-card {
+  transition: box-shadow 0.25s ease, transform 0.25s ease;
+}
+
+.section-card:hover {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+/* Vehicle image hover effect */
+.vehicle-image-box img {
+  transition: transform 0.35s ease;
+}
+
+.vehicle-image-box:hover img {
+  transform: scale(1.04);
+}
+
+/* Feature hover effect */
+.feature-box {
+  transition: background-color 0.2s ease,
+              border-color 0.2s ease,
+              transform 0.2s ease;
+}
+
+.feature-box:hover {
+  background-color: #eef5fb;
+  border-left-color: var(--primary-dark);
+  transform: translateY(-2px);
+}
+
+/* Better buttons */
+.btn-primary {
+  border-radius: 8px;
+  padding: 0.7rem 1rem;
+  font-weight: 600;
+  transition: background-color 0.2s ease,
+              transform 0.2s ease;
+}
+
+.btn-primary:hover {
+  transform: translateY(-1px);
+}
+
+/* Keep the booking summary visible on large screens */
+@media (min-width: 992px) {
+  .summary-card {
+    position: sticky;
+    top: 1rem;
+  }
+}
+
+/* Keyboard accessibility */
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid #80bdff;
+  outline-offset: 3px;
+}
+
