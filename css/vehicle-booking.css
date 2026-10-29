@@ -1,0 +1,296 @@
+
+/* ========================================
+   1. Global Variables
+======================================== */
+:root {
+  --page-bg: #f7f8fa;
+  --card-bg: #ffffff;
+  --primary: #2d6a9f;
+  --primary-dark: #245683;
+  --text: #333333;
+  --border: #e3e3e3;
+
+  --bs-primary: #2d6a9f;
+  --bs-primary-rgb: 45, 106, 159;
+  --bs-link-color: #2d6a9f;
+  --bs-link-hover-color: #245683;
+}
+
+/* ========================================
+   2. Base Styles
+======================================== */
+body {
+  background-color: var(--page-bg);
+  color: var(--text);
+  font-family: "Segoe UI", Arial, sans-serif;
+  margin: 0;
+}
+
+/* ========================================
+   3. Full-Width Navigation Bar
+======================================== */
+.site-navbar {
+  width: 100%;
+  background-color: var(--card-bg);
+  border-bottom: 1px solid var(--border);
+  padding: 12px 0;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.site-navbar .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.site-navbar .navbar-brand {
+  color: var(--primary);
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+.site-navbar .navbar-nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 20px;
+}
+
+.site-navbar .nav-link {
+  color: var(--text);
+  transition: color 0.2s ease;
+}
+
+.site-navbar .nav-link:hover,
+.site-navbar .nav-link.active {
+  color: var(--primary);
+}
+
+/* ========================================
+   4. Page Header
+======================================== */
+.page-header {
+  background-color: var(--card-bg);
+  border-bottom: 1px solid var(--border);
+  padding: 1.5rem 0;
+}
+
+.page-header h1 {
+  color: var(--primary);
+  font-size: 1.75rem;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+/* ========================================
+   5. Cards and Sections
+======================================== */
+.section-card {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  padding: 1.25rem;
+  transition: box-shadow 0.25s ease;
+}
+
+.section-card:hover {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+.section-title {
+  color: var(--text);
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+/* ========================================
+   6. Vehicle Image and Details
+======================================== */
+.vehicle-image-box {
+  background-color: #eef1f5;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.vehicle-image-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.35s ease;
+}
+
+.vehicle-image-box:hover img {
+  transform: scale(1.04);
+}
+
+.vehicle-price {
+  color: var(--primary);
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.vehicle-specs dt {
+  color: #6c757d;
+  font-weight: 400;
+}
+
+.vehicle-specs dd {
+  font-weight: 600;
+}
+
+/* ========================================
+   7. Vehicle Features
+======================================== */
+.feature-box {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--primary);
+  border-radius: 6px;
+  font-size: 0.925rem;
+  padding: 0.6rem 0.85rem;
+  transition: background-color 0.2s ease,
+              border-color 0.2s ease,
+              transform 0.2s ease;
+}
+
+.feature-box:hover {
+  background-color: #eef5fb;
+  border-left-color: var(--primary-dark);
+  transform: translateY(-2px);
+}
+
+/* ========================================
+   8. Booking Form
+======================================== */
+.form-group-title {
+  border-bottom: 1px solid var(--border);
+  color: var(--primary);
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  padding-bottom: 0.4rem;
+}
+
+.form-control:focus,
+.form-select:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 0.2rem rgba(45, 106, 159, 0.2);
+}
+
+.form-check-input:checked {
+  background-color: var(--primary);
+  border-color: var(--primary);
+}
+
+.form-check-input:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 0.2rem rgba(45, 106, 159, 0.2);
+}
+
+/* ========================================
+   9. Buttons
+======================================== */
+.btn-primary {
+  --bs-btn-bg: var(--primary);
+  --bs-btn-border-color: var(--primary);
+  --bs-btn-hover-bg: var(--primary-dark);
+  --bs-btn-hover-border-color: var(--primary-dark);
+  --bs-btn-active-bg: #1f4a70;
+  --bs-btn-active-border-color: #1f4a70;
+  --bs-btn-focus-shadow-rgb: 45, 106, 159;
+
+  border-radius: 8px;
+  padding: 0.7rem 1rem;
+  font-weight: 600;
+  transition: background-color 0.2s ease,
+              transform 0.2s ease;
+}
+
+.btn-primary:hover {
+  transform: translateY(-1px);
+}
+
+/* ========================================
+   10. Booking Summary
+======================================== */
+.summary-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  border-bottom: 1px solid var(--border);
+  padding: 0.55rem 0;
+}
+
+.summary-row dt {
+  color: #6c757d;
+  font-weight: 400;
+}
+
+.summary-row dd {
+  margin-bottom: 0;
+  text-align: right;
+}
+
+.summary-row-total {
+  border-bottom: 0;
+}
+
+.summary-row-total dt,
+.summary-row-total dd {
+  color: var(--text);
+  font-weight: 600;
+}
+
+/* Sticky summary on large screens */
+@media (min-width: 992px) {
+  .summary-card {
+    position: sticky;
+    top: 1rem;
+  }
+}
+
+/* ========================================
+   11. Booking Confirmation
+======================================== */
+.confirmation-card {
+  border-left: 4px solid var(--primary);
+}
+
+/* ========================================
+   12. Accessibility
+======================================== */
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid #80bdff;
+  outline-offset: 3px;
+}
+
+/* ========================================
+   13. Responsive Design
+======================================== */
+@media (max-width: 575.98px) {
+  .site-navbar .container {
+    gap: 8px;
+  }
+
+  .site-navbar .navbar-brand {
+    margin-right: 0.5rem;
+  }
+
+  .site-navbar .navbar-nav {
+    gap: 8px;
+  }
+
+  .site-navbar .nav-link {
+    font-size: 0.9rem;
+  }
+
+  .section-card {
+    padding: 1rem;
+  }
+}
