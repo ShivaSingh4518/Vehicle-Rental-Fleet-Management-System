@@ -92,55 +92,110 @@ Customer Interface
 # 📂 Repository File Structure
 
 ```text
+
 VRAFM-System/
-├── index.html                              # Home Page (Dev 1)
-├── IMPLEMENTATION_PLAN.md                  # Detailed 4-Member Development Plan
-├── README.md                               # Master Project Documentation
+│
+├── index.html                          # Homepage (Dev 1 - Shiva)
+├── README.md                           # Master Project Documentation
+├── IMPLEMENTATION_PLAN.md              # Four-Member Development Plan
+├── .gitignore                           # Git ignored files
 │
 ├── pages/
-│   ├── vehicles.html                       # Vehicle Listing (Dev 1)
-│   ├── vehicle-details.html                # Vehicle Details (Dev 2)
-│   ├── booking.html                        # Booking Interface (Dev 2)
-│   ├── booking-confirmation.html           # Booking Confirmation (Dev 2)
-│   ├── admin.html                           # Admin Dashboard (Dev 3)
-│   ├── customers.html                       # Customer Management (Dev 3)
-│   └── maintenance.html                     # Maintenance & Fleet Status (Dev 4)
+│   │
+│   ├── vehicles.html                    # Vehicle Listing (Dev 1)
+│   │
+│   ├── vehicle-details.html             # Vehicle Details (Dev 2)
+│   ├── booking.html                     # Booking Interface (Dev 2)
+│   ├── booking-confirmation.html        # Booking Confirmation (Dev 2)
+│   │
+│   ├── admin.html                       # Admin Dashboard (Dev 3)
+│   ├── customers.html                   # Customer Management (Dev 3)
+│   │
+│   ├── maintenance.html                 # Maintenance & Fleet (Dev 4)
+│   │
+│   ├── login.html                       # User Login
+│   └── register.html                    # User Registration
 │
 ├── assets/
-│   ├── images/
-│   │   ├── logo/                            # Project Logo
-│   │   ├── vehicles/                        # Vehicle Images
-│   │   ├── cars/                            # Car Images
-│   │   └── bikes/                           # Bike Images
 │   │
-│   └── icons/                               # UI Icons
+│   ├── images/
+│   │   ├── logo/
+│   │   │   └── logo.png
+│   │   │
+│   │   ├── vehicles/
+│   │   │   └── vehicle-placeholder.png
+│   │   │
+│   │   ├── cars/
+│   │   │   ├── TOYOTA.png
+│   │   │   ├── TOYOTA_4x3.png
+│   │   │   ├── Hyundai_Creta.avif
+│   │   │   ├── Mahindra_XUV700.avif
+│   │   │   ├── Maruti_Swift.avif
+│   │   │   └── Tata_Nexon.avif
+│   │   │
+│   │   └── bikes/
+│   │
+│   └── icons/
+│       └── (UI icons)
 │
-└── css/
-    ├── main.css                             # Master CSS Aggregator
+├── css/
+│   │
+│   ├── main.css                        # Shared CSS aggregator
+│   │
+│   ├── tokens/
+│   │   └── variables.css               # Colors, fonts, spacing
+│   │
+│   ├── base/
+│   │   ├── reset.css                   # CSS normalization
+│   │   └── layout.css                  # Global layout
+│   │
+│   ├── components/
+│   │   ├── buttons.css
+│   │   ├── cards.css
+│   │   ├── forms.css
+│   │   ├── tables.css
+│   │   ├── badges.css
+│   │   └── navbar.css
+│   │
+│   └── pages/
+│       ├── home.css                    # Dev 1
+│       ├── vehicles.css                # Dev 1
+│       ├── vehicle-details.css         # Dev 2
+│       ├── booking.css                 # Dev 2
+│       ├── booking-confirmation.css    # Dev 2
+│       ├── admin.css                   # Dev 3
+│       ├── customers.css               # Dev 3
+│       ├── maintenance.css             # Dev 4
+│       ├── login.css
+│       └── register.css
+│
+└── js/
     │
-    ├── tokens/
-    │   └── variables.css                    # CSS Custom Properties & Design Tokens
+    ├── main.js                         # Common initialization
     │
-    ├── base/
-    │   ├── reset.css                        # CSS Reset & Normalization
-    │   └── layout.css                       # Global Layout Structure
+    ├── data/
+    │   └── vehicles.js                 # Vehicle data
     │
     ├── components/
-    │   ├── buttons.css                      # Button Variants & Hover States
-    │   ├── cards.css                        # Vehicle & Dashboard Cards
-    │   ├── forms.css                        # Forms & Input Components
-    │   ├── tables.css                       # Admin Data Tables
-    │   ├── badges.css                       # Status & Category Badges
-    │   └── navbar.css                       # Navigation Component
+    │   ├── navbar.js                   # Navigation functionality
+    │   └── vehicle-card.js             # Reusable vehicle cards
+    │
+    ├── utils/
+    │   ├── validation.js               # Form validation
+    │   └── storage.js                  # Local storage utilities
     │
     └── pages/
-        ├── home.css                         # Scoped Home Page Styles
-        ├── vehicles.css                     # Scoped Vehicle Listing Styles
-        ├── vehicle-details.css              # Scoped Vehicle Details Styles
-        ├── booking.css                      # Scoped Booking Page Styles
-        ├── admin.css                        # Scoped Admin Dashboard Styles
-        ├── customers.css                    # Scoped Customer Page Styles
-        └── maintenance.css                  # Scoped Maintenance Page Styles
+        ├── home.js                     # Dev 1
+        ├── vehicles.js                 # Dev 1
+        ├── vehicle-details.js          # Dev 2
+        ├── booking.js                  # Dev 2
+        ├── booking-confirmation.js     # Dev 2
+        ├── admin.js                    # Dev 3
+        ├── customers.js                # Dev 3
+        ├── maintenance.js              # Dev 4
+        ├── login.js
+        └── register.js
+
 ```
 
 ---
