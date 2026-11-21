@@ -173,7 +173,7 @@
         Book This Vehicle
       </h2>
 
-      <form id="booking-form" action="#" method="get">
+      <form id="booking-form" action="#" method="get" novalidate>
 
         <div class="row g-4">
 
@@ -200,8 +200,12 @@
                     name="full_name"
                     placeholder="Enter your full name"
                     autocomplete="name"
+                    minlength="2"
                     required
                   >
+                  <div class="invalid-feedback">
+                    Please enter your full name (at least 2 characters).
+                  </div>
                 </div>
 
                 <div class="col-12 col-md-6">
@@ -218,6 +222,9 @@
                     autocomplete="email"
                     required
                   >
+                  <div class="invalid-feedback">
+                    Please enter a valid email address.
+                  </div>
                 </div>
 
                 <div class="col-12 col-md-6">
@@ -238,6 +245,9 @@
                     title="Enter a 10-digit mobile number"
                     required
                   >
+                  <div class="invalid-feedback">
+                    Please enter a 10-digit mobile number.
+                  </div>
                 </div>
 
               </div>
@@ -272,6 +282,9 @@
                       City Center Branch
                     </option>
                   </select>
+                  <div class="invalid-feedback">
+                    Please select a pickup location.
+                  </div>
                 </div>
 
                 <div class="col-12 col-md-6">
@@ -286,6 +299,9 @@
                     name="pickup_date"
                     required
                   >
+                  <div class="invalid-feedback">
+                    Please select a pickup date from today onward.
+                  </div>
                 </div>
 
                 <div class="col-12 col-md-6">
@@ -314,6 +330,9 @@
                     name="return_date"
                     required
                   >
+                  <div class="invalid-feedback">
+                    Please select a return date on or after the pickup date.
+                  </div>
                 </div>
 
                 <div class="col-12 col-md-6">
@@ -377,6 +396,16 @@
                 </div>
 
                 <div class="summary-row">
+                  <dt>Rental Days</dt>
+                  <dd id="summary-days">—</dd>
+                </div>
+
+                <div class="summary-row">
+                  <dt>Base Rental</dt>
+                  <dd id="summary-base">—</dd>
+                </div>
+
+                <div class="summary-row">
                   <dt>Pickup</dt>
                   <dd id="summary-location" class="text-muted">
                     Not selected
@@ -395,11 +424,6 @@
                   <dd id="summary-return" class="text-muted">
                     Not selected
                   </dd>
-                </div>
-
-                <div class="summary-row">
-                  <dt>Rental Days</dt>
-                  <dd id="summary-days">—</dd>
                 </div>
 
                 <div class="summary-row summary-row-total">
@@ -425,6 +449,9 @@
                 >
                   I agree to the rental terms and conditions.
                 </label>
+                <div class="invalid-feedback">
+                  Please agree to the rental terms before confirming.
+                </div>
 
               </div>
 
@@ -450,14 +477,15 @@
     <section
       class="section-card confirmation-card"
       aria-labelledby="confirmation-heading"
+      aria-live="polite"
     >
 
       <h2 id="confirmation-heading" class="section-title mb-2">
         Booking Confirmation
       </h2>
 
-      <p class="text-muted">
-        This section is an example of a booking confirmation.
+      <p class="text-muted" id="confirmation-message">
+        Submit the booking form to see your confirmation details here.
       </p>
 
       <dl class="row mb-0">
@@ -465,15 +493,57 @@
         <dt class="col-5 col-sm-3 fw-normal text-muted">
           Booking ID
         </dt>
-        <dd class="col-7 col-sm-9 fw-semibold">
+        <dd class="col-7 col-sm-9 fw-semibold" id="confirmation-id">
           VR-2026-001
         </dd>
 
         <dt class="col-5 col-sm-3 fw-normal text-muted">
           Vehicle
         </dt>
-        <dd class="col-7 col-sm-9 fw-semibold">
+        <dd class="col-7 col-sm-9 fw-semibold" id="confirmation-vehicle">
           Toyota Fortuner
+        </dd>
+
+        <dt class="col-5 col-sm-3 fw-normal text-muted">
+          Customer
+        </dt>
+        <dd class="col-7 col-sm-9 fw-semibold" id="confirmation-name">
+          Not submitted
+        </dd>
+
+        <dt class="col-5 col-sm-3 fw-normal text-muted">
+          Email
+        </dt>
+        <dd class="col-7 col-sm-9 fw-semibold" id="confirmation-email">
+          Not submitted
+        </dd>
+
+        <dt class="col-5 col-sm-3 fw-normal text-muted">
+          Phone
+        </dt>
+        <dd class="col-7 col-sm-9 fw-semibold" id="confirmation-phone">
+          Not submitted
+        </dd>
+
+        <dt class="col-5 col-sm-3 fw-normal text-muted">
+          Pickup
+        </dt>
+        <dd class="col-7 col-sm-9 fw-semibold" id="confirmation-pickup">
+          Not submitted
+        </dd>
+
+        <dt class="col-5 col-sm-3 fw-normal text-muted">
+          Return
+        </dt>
+        <dd class="col-7 col-sm-9 fw-semibold" id="confirmation-return">
+          Not submitted
+        </dd>
+
+        <dt class="col-5 col-sm-3 fw-normal text-muted">
+          Estimated Total
+        </dt>
+        <dd class="col-7 col-sm-9 fw-semibold" id="confirmation-total">
+          Not submitted
         </dd>
 
         <dt class="col-5 col-sm-3 fw-normal text-muted">
@@ -490,122 +560,7 @@
 
   </main>
 
-  <!-- JavaScript: Date Validation and Booking Summary -->
-  <script>
-    const pickupDate = document.getElementById("pickup-date");
-    const returnDate = document.getElementById("return-date");
-    const pickupLocation = document.getElementById("pickup-location");
-    const bookingForm = document.getElementById("booking-form");
-
-    const summaryLocation = document.getElementById("summary-location");
-    const summaryPickup = document.getElementById("summary-pickup");
-    const summaryReturn = document.getElementById("summary-return");
-    const summaryDays = document.getElementById("summary-days");
-    const summaryTotal = document.getElementById("summary-total");
-
-    const dailyRate = 4500;
-
-    // Get today's date in local time.
-    function getLocalDate() {
-      const today = new Date();
-
-      const year = today.getFullYear();
-      const month = String(today.getMonth() + 1).padStart(2, "0");
-      const day = String(today.getDate()).padStart(2, "0");
-
-      return `${year}-${month}-${day}`;
-    }
-
-    const today = getLocalDate();
-
-    pickupDate.min = today;
-    returnDate.min = today;
-
-    // Calculate the rental duration and estimated cost.
-    function updateBookingSummary() {
-      const selectedOption =
-        pickupLocation.options[pickupLocation.selectedIndex];
-
-      summaryLocation.textContent =
-        pickupLocation.value && selectedOption
-          ? selectedOption.text
-          : "Not selected";
-
-      summaryPickup.textContent = pickupDate.value || "Not selected";
-      summaryReturn.textContent = returnDate.value || "Not selected";
-
-      summaryDays.textContent = "—";
-      summaryTotal.textContent = "—";
-
-      if (!pickupDate.value || !returnDate.value) {
-        return;
-      }
-
-      const start = new Date(pickupDate.value + "T00:00:00Z");
-      const end = new Date(returnDate.value + "T00:00:00Z");
-
-      const difference = end.getTime() - start.getTime();
-      const days = difference / (1000 * 60 * 60 * 24);
-
-      if (days < 0) {
-        return;
-      }
-
-      // Same-day rental is charged as one day.
-      const rentalDays = Math.max(1, days);
-
-      summaryDays.textContent = rentalDays;
-      summaryTotal.textContent =
-        "₹" + (rentalDays * dailyRate).toLocaleString("en-IN");
-    }
-
-    // Update the minimum return date.
-    pickupDate.addEventListener("change", () => {
-      returnDate.min = pickupDate.value || today;
-
-      if (
-        returnDate.value &&
-        pickupDate.value &&
-        returnDate.value < pickupDate.value
-      ) {
-        returnDate.value = "";
-      }
-
-      updateBookingSummary();
-    });
-
-    returnDate.addEventListener("change", updateBookingSummary);
-    pickupLocation.addEventListener("change", updateBookingSummary);
-
-    // Validate the dates before normal form submission.
-    bookingForm.addEventListener("submit", (event) => {
-      if (
-        !pickupDate.value ||
-        !returnDate.value ||
-        returnDate.value < pickupDate.value
-      ) {
-        event.preventDefault();
-
-        alert("Please select valid pickup and return dates.");
-
-        if (!pickupDate.value) {
-          pickupDate.focus();
-        } else {
-          returnDate.focus();
-        }
-
-        return;
-      }
-
-      // This is still a frontend demo, not a real booking system.
-      event.preventDefault();
-
-      alert(
-        "Demo only: your booking has not been saved. " +
-        "Backend integration is required for real bookings."
-      );
-    });
-  </script>
+  <script src="vehicle-booking.js" defer></script>
 
 </body>
 </html>
